@@ -16,12 +16,12 @@ The service provider will automatically get registered. Or you may manually add 
 
 ## Usage
 
-Simply pass an instance of carbon date to the method Tafqeet::inArabic()
+Simply pass an instance of carbon date to the method Tafqeet::inArabic($amount)
 
 ```php
 
-	$money = App\cheque::first()->money;
-	$tafqeetInArabic = Tafqeet::inArabic($money);
+	$amount = App\cheque::first()->money;
+	$tafqeetInArabic = Tafqeet::inArabic($amount);
 
         // Result => "فقط تسعمائة ألف ريال و أربعة و ثلاثون هللة لاغير"
 ```
