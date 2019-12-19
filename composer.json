@@ -1,0 +1,33 @@
+{
+  "name": "alkoumi/laravel-arabic-tafqeet",
+  "description": "a package to translate money numbers to our Amazing 💝 Arabic language TAFQEET . to look like [فقط تسعمائة ألف ريال و أربعة و ثلاثون هللة لاغير]",
+  "keywords": [
+    "arabic",
+    "tafqeet",
+    "numbers",
+    "arabic numbers",
+    "arabic-date-tafqeet"
+  ],
+  "homepage": "https://be.net/komy",
+  "license": "MIT",
+  "authors": [
+		{
+		"name": "Mohammed Alkoumi",
+		"email": "komy66@gmail.com"
+		}
+	],
+  "autoload": {
+      "psr-4": {
+          "Alkoumi\\LaravelArabicTafqeet\\": "src/"
+      }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Alkoumi\\LaravelArabicTafqeet\\LaravelArabicTafqeetServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
