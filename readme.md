@@ -11,7 +11,7 @@ The service provider will automatically get registered. Or you may manually add 
 
     'providers' => [
         // ...
-        Alkoumi\CarbonDateTranslator\LaravelArabicTafqeetServiceProvider::class,
+        Alkoumi\LaravelArabicTafqeet\LaravelArabicTafqeetServiceProvider::class,
     ];
 
 ## Usage
@@ -21,7 +21,7 @@ Simply pass an instance of carbon date to the method Tafqeet::inArabic()
 ```php
 
 	$money = App\cheque::first()->money;
-	$differenceInArabic = Tafqeet::inArabic($money);
+	$tafqeetInArabic = Tafqeet::inArabic($money);
 
         // Result => "فقط تسعمائة ألف ريال و أربعة و ثلاثون هللة لاغير"
 ```
