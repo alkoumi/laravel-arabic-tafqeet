@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AliAbdalla\Tafqeet\Helper;
+namespace Alkoumi\LaravelArabicTafqeet\Helpers;
 
 
 trait Validation

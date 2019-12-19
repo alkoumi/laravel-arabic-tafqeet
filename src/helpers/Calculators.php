@@ -1,7 +1,9 @@
 <?php
 
 
-namespace AliAbdalla\Tafqeet\Helper;
+namespace Alkoumi\LaravelArabicTafqeet\Helpers;
+
+
 trait Calculators
 {
     use Digit;
