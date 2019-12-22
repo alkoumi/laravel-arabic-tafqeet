@@ -8,7 +8,6 @@ trait Calculators
 {
     use Digit;
 
-
     public function classA($arr,$len = 1)
     {
         return $this->ones[$arr[0]];
@@ -242,7 +241,6 @@ trait Calculators
         return $million . $this->config['connection_tool'] . $this->classF($classE);
 
     }
-
 //    public function classH($arr,$len = 8)
 //    {
 //        $classC = [$arr[2],$arr[4],$arr[5]];
@@ -257,7 +255,6 @@ trait Calculators
 //        return $million . $this->config['connection_tool'] . $this->classG($classE);
 //
 //    }
-
     public function classH($arr,$len = 8)
     {
         $classF = [$arr[2],$arr[3],$arr[4],$arr[5],$arr[6],$arr[7]];
@@ -330,7 +327,6 @@ trait Calculators
 
         return $million . $this->config['connection_tool'] . $this->classF($classF);
     }
-
 
     public function classI($arr,$len = 9)
     {

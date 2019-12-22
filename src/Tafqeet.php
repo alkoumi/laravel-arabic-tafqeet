@@ -148,5 +148,4 @@
 			$this->split_parsed_number_to_two_number_depend_on_comma()->split_numbers_before_comma_to_array()->split_numbers_after_comma_to_array();
 			return $this;
 		}
-
 	}

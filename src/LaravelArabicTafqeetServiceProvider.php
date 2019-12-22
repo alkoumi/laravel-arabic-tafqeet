@@ -15,12 +15,7 @@ class LaravelArabicTafqeetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
-        //create alias 
-        //AliasLoader::getInstance()->alias("TransDate", "Alkoumi\CarbonDateTranslator\Translator");
         AliasLoader::getInstance()->alias("Tafqeet", Tafqeet::class);
-
-
     }
 
     /**

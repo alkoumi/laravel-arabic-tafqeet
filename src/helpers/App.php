@@ -6,7 +6,6 @@ namespace Alkoumi\LaravelArabicTafqeet\Helpers;
 
 trait App
 {
-
     public function runBeforeComma()
     {
         $class = $this->detectClass($this->before_comma_len);
@@ -20,7 +19,6 @@ trait App
         return 'عفوا هذا الرقم خارج نطاقنا حاليا حاول لاحقاً';
     }
 
-
     public function runAfterComma()
     {
         $class =  $this->detectClass($this->after_comma_len);
@@ -31,7 +29,6 @@ trait App
         }
         return 'عفوا هذا الرقم خارج نطاقنا حاليا حاول لاحقاً';
     }
-
 
     public function detectClass($len)
     {
