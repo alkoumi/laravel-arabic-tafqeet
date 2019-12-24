@@ -16,7 +16,7 @@ The service provider will automatically get registered. Or you may manually add 
 
 ## Usage
 
-Simply pass an instance of carbon date to the method Tafqeet::inArabic($amount)
+Simply pass amount as `Number` to the method Tafqeet::inArabic($amount)
 
 ```php
 	$amount = App\cheque::first()->money;
