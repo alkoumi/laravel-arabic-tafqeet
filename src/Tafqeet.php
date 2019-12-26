@@ -9,7 +9,7 @@
 
     class Tafqeet
     {
-        use Calculators,Handler,Validation,App;
+        use Calculators, Handler, Validation, App;
 
         public $config = [
             'connection_tool' => ' و',
@@ -89,10 +89,10 @@
          *
          * @return mixed
          */
-        public static function inArabic($amount = 0,$currency = 'sar')
+        public static function inArabic($amount = 0, $currency = 'sar')
         {
 
-            $amount = money_format("%i",$amount); // update the amount to be always 2 digit after comma
+            $amount = money_format("%i", $amount); // update the amount to be always 2 digit after comma
 
 //
             return (new self)->setAmount($amount)->initValidation()->prepare()->run()->result($currency);
@@ -107,27 +107,27 @@
         {
             $result = $this->config['starter'].' ';
 
-            if ($this->is_main1_currency){
+            if ($this->is_main1_currency) {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main1'];
 
-            }else{
+            }else {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main2'];
 
             }
-            if ($this->after_comma_len >= 1 && $this->after_comma_sum != 00){
-                if (in_array($this->after_comma_sum,[
-                    3,4,5,6,7,8,9,10
-                ])){
+            if ($this->after_comma_len>=1 && $this->after_comma_sum != 00) {
+                if (in_array($this->after_comma_sum, [
+                    3, 4, 5, 6, 7, 8, 9, 10
+                ])) {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['multi'];
-                }else{
+                }else {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['single'];
                 }
             }
             $result .= ' '.$this->config['end'];
 
-            return str_replace('  ',' ',$result);
+            return str_replace('  ', ' ', $result);
         }
 
         /**
