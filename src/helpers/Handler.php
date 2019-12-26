@@ -30,12 +30,12 @@ trait Handler
 
     private function split_numbers_after_comma_to_array()
     {
-        if ($this->all_numbers_len >= 2) {
+        if ($this->all_numbers_len>=2) {
             $arr = str_split($this->parsed_number_array[1]);
 
-            if (count($arr) >= 3) {
+            if (count($arr)>=3) {
                 $this->after_comma_array = [$arr[0], $arr[1]];
-            } else {
+            }else {
                 $this->after_comma_array = $arr;
             }
 
