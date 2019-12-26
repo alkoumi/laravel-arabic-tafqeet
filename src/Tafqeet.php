@@ -107,16 +107,16 @@ namespace Alkoumi\LaravelArabicTafqeet;
 
             if ($this->is_main1_currency) {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main1'];
-            } else {
+            }else {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main2'];
             }
-            if ($this->after_comma_len >= 1 && $this->after_comma_sum != 00) {
+            if ($this->after_comma_len>=1 && $this->after_comma_sum != 00) {
                 if (in_array($this->after_comma_sum, [
                     3, 4, 5, 6, 7, 8, 9, 10,
                 ])) {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['multi'];
-                } else {
+                }else {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['single'];
                 }
