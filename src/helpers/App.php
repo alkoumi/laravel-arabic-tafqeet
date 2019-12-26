@@ -9,11 +9,11 @@ trait App
     public function runBeforeComma()
     {
         $class = $this->detectClass($this->before_comma_len);
-        $methodName = 'Class' . $class;
+        $methodName = 'Class'.$class;
 
-        if(method_exists($this,$methodName))
+        if (method_exists($this, $methodName))
         {
-            return $this->$methodName($this->before_comma_array,$this->before_comma_len);
+            return $this->$methodName($this->before_comma_array, $this->before_comma_len);
         }
 
         return 'عفوا هذا الرقم خارج نطاقنا حاليا حاول لاحقاً';
@@ -33,7 +33,7 @@ trait App
     public function detectClass($len)
     {
         if($len == 1)
-             return "A";
+                return "A";
 
 
         if($len == 2)
