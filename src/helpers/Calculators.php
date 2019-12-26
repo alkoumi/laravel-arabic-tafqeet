@@ -42,55 +42,67 @@ trait Calculators
 
 
 
-        if ($arr[0] == 0 and $arr[1] == 0)
-            return '';
+        if ($arr[0] == 0 and $arr[1] == 0) {
+                    return '';
+        }
 
 
 
-        if ($arr[0] == 0)
-            return $this->ones[$arr[1]];
+        if ($arr[0] == 0) {
+                    return $this->ones[$arr[1]];
+        }
 
 
 
-        if ($arr[0] == 1 and $arr[1] == 1)
-            return $this->ones[11];
+        if ($arr[0] == 1 and $arr[1] == 1) {
+                    return $this->ones[11];
+        }
 
 
-        if ($arr[0] == 1 and $arr[1] == 0)
-            return $this->ones[10];
-
-
-
-        if ($arr[1] == 0)
-            return $this->tens[$arr[0]];
+        if ($arr[0] == 1 and $arr[1] == 0) {
+                    return $this->ones[10];
+        }
 
 
 
-        if ($arr[0]>1)
-            return $this->ones[$arr[1]].$this->config['connection_tool'].$this->tens[$arr[0]];
+        if ($arr[1] == 0) {
+                    return $this->tens[$arr[0]];
+        }
 
-        if (in_array($arr[1], [1, 2]))
-                return $this->others[$arr[1]].' '.$this->tens[$arr[0]];
+
+
+        if ($arr[0]>1) {
+                    return $this->ones[$arr[1]].$this->config['connection_tool'].$this->tens[$arr[0]];
+        }
+
+        if (in_array($arr[1], [1, 2])) {
+                        return $this->others[$arr[1]].' '.$this->tens[$arr[0]];
+        }
 
         return $this->ones[$arr[1]].' '.$this->tens[$arr[0]];
     }
 
     public function classC($arr, $len = 3)
     {
-        if ($arr[0] == 0 and $arr[1] == 0 and $arr[2] == 0)
-            return '';
+        if ($arr[0] == 0 and $arr[1] == 0 and $arr[2] == 0) {
+                    return '';
+        }
 
-        if ($arr[0] == 0 and $arr[1] == 0)
-            return $this->ones[$arr[2]];
+        if ($arr[0] == 0 and $arr[1] == 0) {
+                    return $this->ones[$arr[2]];
+        }
 
-        if ($arr[0] == 0)
-            return $this->classB([$arr[1], $arr[2]]);
+        if ($arr[0] == 0) {
+                    return $this->classB([$arr[1], $arr[2]]);
+        }
 
-        if ($arr[2] == 0 and $arr[1] == 0)
-            return $this->hundreds[$arr[0]];
+        if ($arr[2] == 0 and $arr[1] == 0) {
+                    return $this->hundreds[$arr[0]];
+        }
 
-        if ($arr[1] != 0)
-            return $this->hundreds[$arr[0]].$this->config['connection_tool'].$this->classB([$arr[1], $arr[2]]);
+        if ($arr[1] != 0) {
+                    return $this->hundreds[$arr[0]].$this->config['connection_tool'].$this->classB([$arr[1], $arr[2]]);
+        }
 
         return $this->hundreds[$arr[0]].$this->config['connection_tool'].$this->classA([$arr[2]]);
     }
@@ -99,14 +111,16 @@ trait Calculators
     {
         $classC = [$arr[1], $arr[2], $arr[3]];
 
-        if ($arr[0]<=2)
-            $thousands = $this->thousands[$arr[0]];
-        else
-            $thousands = $this->ones[$arr[0]].' '.$this->thousands['39'];
+        if ($arr[0]<=2) {
+                    $thousands = $this->thousands[$arr[0]];
+        } else {
+                    $thousands = $this->ones[$arr[0]].' '.$this->thousands['39'];
+        }
 
 
-        if ($arr[1] == 0 and $arr[2] == 0 and $arr[3] == 0)
-                return $thousands;
+        if ($arr[1] == 0 and $arr[2] == 0 and $arr[3] == 0) {
+                        return $thousands;
+        }
 
         return $thousands.$this->config['connection_tool'].$this->classC($classC);
     }
@@ -126,7 +140,7 @@ trait Calculators
 
             if (in_array($arr[1], [2, 1])) {
                             $thousands = $this->others[$arr[1]].$conn.$this->tens[$arr[0]];
-            }else {
+            } else {
                             $thousands = $this->ones[$arr[1]].$conn.$this->tens[$arr[0]];
             }
 
@@ -136,28 +150,28 @@ trait Calculators
                 {
                     $thousands = $this->ones[10];
                     $thousands .= ' '.$this->thousands[39];
-                }else
+                } else
                 {
                     $thousands = $this->tens[$arr[0]];
                     $thousands .= ' '.$this->thousands[1];
                 }
 
-            }else {
+            } else {
                 if ($arr[2] == 0 and $arr[3] == 0 and $arr[4] == 0)
                 {
                     $thousands .= ' '.$this->thousands[1];
-                }else
+                } else
                 {
                     $thousands .= ' '.$this->thousands[1199];
                 }
 
             }
 
-        }else
+        } else
         {
             if (in_array($arr[1], [2, 1])) {
                             $thousands = $this->others[$arr[1]].' ';
-            }else {
+            } else {
                             $thousands = $this->ones[$arr[1]].' ';
             }
 
@@ -184,12 +198,12 @@ trait Calculators
             if ($arr[1] == 0 && $arr[2] == 0)
             {
                 $thousands = $this->hundreds[$arr[0]].' '.$this->thousands[1];
-            }else {
+            } else {
                 if ($arr[1] == 0)
                 {
                     $thousands = $this->hundreds[$arr[0]].$this->config['connection_tool'].
                         $this->ones[$arr[2]].' '.$this->thousands[1];
-                }elseif ($arr[2] == 0)
+                } elseif ($arr[2] == 0)
                 {
                     if ($arr[3] == 0 and $arr[4] == 0 and $arr[5] == 0)
                     {
@@ -197,12 +211,12 @@ trait Calculators
                         $thousands = $this->hundreds[$arr[0]].$this->config['connection_tool'].
                             $this->tens[$arr[1]].' '.$this->thousands[1];
 
-                    }else
+                    } else
                     {
                         $thousands = $this->hundreds[$arr[0]].$this->config['connection_tool'].
                             $this->tens[$arr[1]].' '.$this->thousands[1199];
                     }
-                }else
+                } else
                 {
 //                    $thousands_lang = $this->thousands[1199];
                     if ($arr[1] == 0 and $arr[2]>=1 and $arr[1]<=10) {
@@ -219,13 +233,14 @@ trait Calculators
                 }
             }
 
-        }else
+        } else
         {
             return $this->classE([$arr[1], $arr[2], $arr[3], $arr[4], $arr[5]]);
         }
 
-        if ($this->classC($classC) != '')
-                return $thousands.$this->config['connection_tool'].$this->classC($classC);
+        if ($this->classC($classC) != '') {
+                        return $thousands.$this->config['connection_tool'].$this->classC($classC);
+        }
         return $thousands;
 
     }
@@ -238,7 +253,7 @@ trait Calculators
 
         if ($arr[0]<=2) {
                     $million = $this->millions[$arr[0]];
-        }else {
+        } else {
                     $million = $this->ones[$arr[0]].' '.$this->millions['39'];
         }
 
@@ -274,7 +289,7 @@ trait Calculators
 
             if (in_array($arr[1], [2, 1])) {
                             $million = $this->others[$arr[1]].$conn.$this->tens[$arr[0]];
-            } else {
+            }else {
                             $million = $this->ones[$arr[1]].$conn.$this->tens[$arr[0]];
             }
 
@@ -284,28 +299,28 @@ trait Calculators
                 {
                     $million = $this->ones[10];
                     $million .= ' '.$this->millions[39];
-                } else
+                }else
                 {
                     $million = $this->tens[$arr[0]];
                     $million .= ' '.$this->millions[1];
                 }
 
-            } else {
+            }else {
                 if ($arr[2] == 0 and $arr[3] == 0 and $arr[4] == 0)
                 {
                     $million .= ' '.$this->millions[1];
-                } else
+                }else
                 {
                     $million .= ' '.$this->millions[1199];
                 }
 
             }
 
-        } else
+        }else
         {
             if (in_array($arr[1], [2, 1])) {
                             $million = $this->others[$arr[1]].' ';
-            } else {
+            }else {
                             $million = $this->ones[$arr[1]].' ';
             }
 
@@ -341,7 +356,7 @@ trait Calculators
 
         if (in_array($arr[1], [2])) {
                     $million = $this->others[$arr[1]].$this->config['connection_tool'].$this->tens[$arr[0]];
-        } else {
+        }else {
                     $million = $this->ones[$arr[1]].$this->config['connection_tool'].$this->tens[$arr[0]];
         }
 

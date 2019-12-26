@@ -32,36 +32,45 @@ trait App
 
     public function detectClass($len)
     {
-        if ($len == 1)
-                return "A";
+        if ($len == 1) {
+                        return "A";
+        }
 
 
-        if ($len == 2)
-            return "B";
+        if ($len == 2) {
+                    return "B";
+        }
 
 
-        if ($len == 3)
-            return "C";
+        if ($len == 3) {
+                    return "C";
+        }
 
 
-        if ($len == 4)
-            return "D";
+        if ($len == 4) {
+                    return "D";
+        }
 
 
-        if ($len == 5)
-            return "E";
+        if ($len == 5) {
+                    return "E";
+        }
 
-        if ($len == 6)
-            return "F";
+        if ($len == 6) {
+                    return "F";
+        }
 
-        if ($len == 7)
-            return "G";
+        if ($len == 7) {
+                    return "G";
+        }
 
-        if ($len == 8)
-            return "H";
+        if ($len == 8) {
+                    return "H";
+        }
 
-        if ($len == 9)
-            return "I";
+        if ($len == 9) {
+                    return "I";
+        }
 
     }
 }

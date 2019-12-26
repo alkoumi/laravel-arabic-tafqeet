@@ -37,7 +37,7 @@ trait Handler
             if (count($arr)>=3)
             {
                 $this->after_comma_array = [$arr[0], $arr[1]];
-            } else
+            }else
             {
                 $this->after_comma_array = $arr;
             }
