@@ -110,7 +110,7 @@
             if ($this->is_main1_currency) {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main1'];
 
-            }else {
+            } else {
                 $result .= $this->result_before_comma.' '.$this->config['currencies'][$currency]['main2'];
 
             }
@@ -120,7 +120,7 @@
                 ])) {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['multi'];
-                }else {
+                } else {
                     $result .= $this->config['connection_tool'].$this->result_after_comma.' '.
                         $this->config['currencies'][$currency]['single'];
                 }

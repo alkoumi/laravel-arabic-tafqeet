@@ -12,7 +12,7 @@ trait Validation
     	
         if (is_numeric($this->parsed_number)) {
                     return $this;
-        } else {
+        }else {
                     die('is not right number ');
         }
     }
