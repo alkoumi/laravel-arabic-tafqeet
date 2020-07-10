@@ -205,18 +205,10 @@ trait Calculators
         $classC = [$arr[1],$arr[2],$arr[3]];
         //$classE = [$arr[1],$arr[2],$arr[3],$arr[4],$arr[5],$arr[6]];
 
-<<<<<<< HEAD
         if($arr[0]<=2)
             $million = $this->millions[$arr[0]] ;
         else
             $million = $this->ones[$arr[0]] . ' ' . $this->millions['39'];
-=======
-        if ($arr[0] <= 2) {
-            $million = $this->millions[$arr[0]];
-        } else {
-            $million = $this->ones[$arr[0]].' '.$this->millions['39'];
-        }
->>>>>>> c887a4394d3176241568f57202b5a8e8a73b160a
 
         if($this->classC($classC)!='')
             return $million . $this->config['connection_tool'] . $this->classC($classC);
