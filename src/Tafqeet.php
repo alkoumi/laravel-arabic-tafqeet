@@ -90,7 +90,7 @@ namespace Alkoumi\LaravelArabicTafqeet;
          */
         public static function inArabic($amount = 0, $currency = 'sar')
         {
-            $amount = money_format('%i', $amount); // update the amount to be always 2 digit after comma
+            //$amount = money_format('%i', $amount); // update the amount to be always 2 digit after comma
 
 //
             return (new self())->setAmount($amount)->initValidation()->prepare()->run()->result($currency);

@@ -198,20 +198,23 @@ trait Calculators
         return $thousands;
     }
 
-    public function classG($arr, $len = 7)
+    public function classG($arr,$len = 7)
     {
+        //dd($arr,$len);
         //$classC = [$arr[2],$arr[4],$arr[5]];
-        //$classC = [$arr[1],$arr[2],$arr[3]];
-        $classE = [$arr[1], $arr[2], $arr[3], $arr[4], $arr[5], $arr[6]];
+        $classC = [$arr[1],$arr[2],$arr[3]];
+        //$classE = [$arr[1],$arr[2],$arr[3],$arr[4],$arr[5],$arr[6]];
 
-        if ($arr[0]<=2) {
-            $million = $this->millions[$arr[0]];
-        }else {
-            $million = $this->ones[$arr[0]].' '.$this->millions['39'];
-        }
+        if($arr[0]<=2)
+            $million = $this->millions[$arr[0]] ;
+        else
+            $million = $this->ones[$arr[0]] . ' ' . $this->millions['39'];
 
-        return $million.$this->config['connection_tool'].$this->classF($classE);
+        if($this->classC($classC)!='')
+            return $million . $this->config['connection_tool'] . $this->classC($classC);
+        return $million;
     }
+
 
 //    public function classH($arr,$len = 8)
 //    {
