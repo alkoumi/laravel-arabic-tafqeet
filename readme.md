@@ -53,3 +53,4 @@ supporing most of arabic currencies same => `sar` , `egp` , `kwd` extra...
 	$tafqeetInArabic = Tafqeet::inArabic($amount,'egp');
         // Result => "فقط تسعمائة ألف جنيه و أربعة و ثلاثون قرش لاغير"
 ```
+#### Give Me 💗 Cup of ☕️ Coffee here https://patreon.com/mohammadelkoumi
